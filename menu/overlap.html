@@ -46,14 +46,16 @@
 			<div>MENU</div>
 		</div>
 		<script>
-			var show = false;
-			setInterval(
-				function () {
-					show = !show;
-					document.getElementById('test').style.height = show ? document.getElementById('testInside').clientHeight : "";
-					document.getElementById('test').className = show ? "ease-in-out show" : "ease-in-out hide";
-				}
-			, 3000)
+			(function () {
+				var show = false;
+				setInterval(
+					function () {
+						show = !show;
+						document.getElementById('test').style.height = show ? document.getElementById('testInside').clientHeight : "";
+						document.getElementById('test').className = show ? "ease-in-out show" : "ease-in-out hide";
+					}
+				, 3000)
+			})()
 		</script>
 	</body>
 </html>
