@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<style>
+			.ease-in-out {
+				-webkit-transition: height 2s ease-out, opacity 1.5s linear;
+				-moz-transition: height 2s ease-out, opacity 1.5s linear;
+				-o-transition: height 2s ease-out, opacity 1.5s linear;
+				transition: height 2s ease-out, opacity 1.5s linear;
+			}
+			.show {
+				opacity: 1;
+			}
+			.hide {
+				opacity: 0;
+				height: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="background-color: #eef">
+			<div>MENU</div>
+		</div>
+		<div style="background-color: #eef;">
+			<div>MENU</div>
+			<div id="test" class="ease-in-out hide" style="overflow: hidden;">
+				<div id="testInside" style="background-color: #ccf; ">
+					1111<br />
+					2222<br />
+					3333<br />
+					4444<br />
+					5555<br />
+					6666<br />
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #eef">
+			<div>MENU</div>
+		</div>
+		<div style="background-color: #eef">
+			<div>MENU</div>
+		</div>
+		<div style="background-color: #eef">
+			<div>MENU</div>
+		</div>
+		<div style="background-color: #eef">
+			<div>MENU</div>
+		</div>
+		<script>
+			var show = false;
+			setInterval(
+				function () {
+					show = !show;
+					document.getElementById('test').style.height = show ? document.getElementById('testInside').clientHeight : "";
+					document.getElementById('test').className = show ? "ease-in-out show" : "ease-in-out hide";
+				}
+			, 3000)
+		</script>
+	</body>
+</html>
